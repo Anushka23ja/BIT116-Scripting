@@ -1,0 +1,35 @@
+<!DOCTYPE HTML> <!-- Tells which type of HTML you are using -->
+<html><!-- creates a HTML -->
+<head><!-- creates a heading -->
+<title>Ice 06 Part 2</title> <!-- titles the HTML document -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <!-- refers to a javascript extention -->
+<script type="text/javascript" src="WhatDoesThisDo.js"></script> </script> <!-- refers to a javascript extention -->
+</head><!-- ends head syntax -->
+<body><!-- starts body syntax -->
+</body><!-- ends body syntax -->
+</html><!-- ends HTML syntax -->
+
+
+
+var input = prompt("Please type a number", "12"); 
+var input2 = prompt("Please type a number", "1");
+// You may assume that the user just presses the "OK"/"Enter" button,
+// so that you know the number will be.
+alert(input + input2); // what will the user see?
+Anushka: output: 121
+// what are the data types of "input" and "input2"?
+Anushka: since its not yet mentioned it is considered a String unless otherwise noted. 
+var number1 = parseInt(input);
+var number2 = parseInt(input2);
+alert(number1 + number2);// what will the user see?
+Anushka:13.0
+// what are the data types of "number1" and "number2"?
+var decimalNumber1 = parseFloat(input);
+var decimalNumber2 = parseFloat(input2);
+alert(decimalNumber1 + decimalNumber2);// what will the user see?
+Anushka: 13.0
+// what are the data types of "decimalNumber1" and "decimalNumber1"?
+var num1 = Number(input);
+var num2 = Number(input2);
+alert(num1 + num2);// what will the user see?
+Anushka: 13

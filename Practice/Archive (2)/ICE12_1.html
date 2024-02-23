@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>ICE12</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--		<script type="text/javascript" src="jquery-1.7.1.js"></script> -->
+        <script>
+$(document).ready( function() {
+   
+	$("#num").click( function() {
+		var nums = [10, 20, 2, -4, -2, 70, 93]
+		var one = $("#user").val();	
+		arrayone = [];
+        arraytwo = [];
+		// check each element of the array to see if it's what we're looking for
+		for (i in nums) {
+			if(nums[i] == one) {
+                arrayone.push(one);
+                arraytwo.push(i);
+            }
+		}
+        
+        if(arrayone.length == 0){
+            $("#output").html("please try again, this number is not in the array");
+           }
+        else{
+            $("#output").html( "Found number " + one + " at index "  + arraytwo.toString());
+        }
+        
+	});
+
+	$("#num2").click(function() {
+		var nums = [10, 20, 30, -10, 80, 77];
+	    var one = $("#user2").val();
+        var two = nums[2];
+        minimum = [];
+        
+		for (i in nums) {
+            if(nums[i] < one){
+                minimum.push(nums[i])
+               }
+        }
+        
+		if(minimum.length == 0){
+            $("#output2").html("no num is less than that in the array: " + one);
+           }
+        else{
+            for(var i = 0; i < minimum.length; i++){
+                $("#output2").html("There are num smaller than " + one + " at "  + minimum.toString(", "));
+            }
+        }
+    
+	});
+
+});
+        </script>
+    </head>
+    <body>
+        <h3>Find nums: </h3>
+        Enter a number: <input type="text" value="" id="user"><br/>
+        <input type="button" value="Click Here" id="num"><br/>
+        <h1>Result: </h1>
+        <p id="output"></p>
+        <hr/>
+        
+        <h3>Numbers less: </h3>
+        Enter a number<input type="text" value="" id="user2"><br/>
+        <input type="button" value="Click Here" id="num2"><br/>
+        <h1>Result:</h1>
+        <p id="output2"></p>
+        <hr/>
+    </body>
+</html>

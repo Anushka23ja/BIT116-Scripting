@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>ICE12</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--		<script type="text/javascript" src="jquery-1.7.1.js"></script> -->
+        <script>
+$(document).ready( function() {
+   
+	$("#average").click( function() {
+		var num = [12, 5, 7, 10, 12, -5 ,88];
+        var average = 0;
+        var t = 0;	
+		// check each element of the array to see if it's what we're looking for
+		for (var i = 0; i < num.length; i++ ) {
+			t += num[i]
+            average = t/num.length
+		}
+        $("#here").html( "Average num: " + average);
+	});
+
+	$("#vals").click( function() {
+		var num2 = [18, -9, 12, 24, 100, 12];
+        var one = 0; 
+        var two = num2[0];
+        for (i in num2){
+            if(num2[i] > two){
+                one = i;
+                two = num2[i];
+            }
+        }
+		$("#here2").html("Max Num: "+ num2[one]+ " at index " +one);
+	});
+
+});
+        </script>
+    </head>
+    <body>
+        <h3>Average Num- </h3>
+        <input type="button" value="Click here" id="average"><br/>
+        <p id="here"></p>
+        <hr/>
+        
+        <h3>Max Value- </h3>
+        <input type="button" value="Click here" id="vals"><br/>
+        <p id="here2"></p>
+        <hr/>
+    </body>
+</html>
