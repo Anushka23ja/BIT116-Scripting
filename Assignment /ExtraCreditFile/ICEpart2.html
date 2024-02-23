@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Template</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#getFeedback").click( function() {
+
+			var whichOne = $('input:radio[name=enthusiasm]:checked').val();
+			// First, what do we get:
+			// 	>>> is added so it's clear what the var is, even if it's empty/blank			
+			if( whichOne === undefined )
+	       		$("#msgHere").html( "You need to make a choice!");
+	       	else if( whichOne === "High" )
+	       		$("#msgHere").html( "Tomatoes are good for you!!");
+	       	else if( whichOne === "SoSo" )
+	       		$("#msgHere").html( "Beets are good for your blood");
+	       	else if( whichOne === "Low" )
+	       		$("#msgHere").html( "Carrots are bright orange!!!");
+           	else if( whichOne === "Low1" )
+	       		$("#msgHere").html( "We love oatts!!!!!");
+	       	else 
+	       		$("#msgHere").html( "INTERNAL ERROR: We should never execute this line of code!!");
+
+
+       });
+    });
+</script>
+
+</head>
+
+<body>
+
+<h2>jQuery Template</h2> 
+<form>
+<h3>How much does BIT 116 rock?</h3>
+<p>
+<input type="radio" name="enthusiasm" value="High">Tomatoes<br/>
+<input type="radio" name="enthusiasm" value="SoSo"> Beets <br/>
+<input type="radio" name="enthusiasm" value="Low"> Carrots<br/>
+<input type="radio" name="enthusiasm" value="Low1"> Oats<br/>
+<input type="button" id="getFeedback" value="Click here for feedback!">
+</p>
+</form>
+
+<p id="msgHere">Some Fascinating Text! That I will change!  With jQuery!</p>
+
+</body>
+</html>
+
