@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anushka Chougule</title>
+</head>
+<body>
+<body>
+<h1>Welcome!</h1>
+<script>
+	function checkForS() {
+		var theText=window.prompt("Enter your first");
+		
+		var splitText= theText.split(" ");
+		
+		if (splitText[0].charAt(0) == "S") 
+		{
+			newFirstName = theText;
+		}
+        else if(splitText[0].charAt(0) == "s"){
+            newFirstName = "Please enter a capital letter: S" ;
+
+        }
+		else 
+		{
+			newFirstName = "Enter a name that starts with letter: S";
+		}
+		
+		window.alert("Now your name is " +newFirstName);
+	}
+
+checkForS();
+
+</script>
+</body>
+</body>
+
+</html>

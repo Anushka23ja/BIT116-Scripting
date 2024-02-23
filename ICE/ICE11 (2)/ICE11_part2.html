@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ICE 11 part2</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#getFeedback").click( function() {
+
+			var startingText = document.getElementById("myText").value ;
+			var feedback = startingText;
+           
+           if( $('#dollars').is(':checked') ) {
+                num = parseFloat(startingText) ;
+				feedback = num + " dollars, ";
+            }
+
+			if( $('#rupees').is(':checked') ) {
+                num1 = parseFloat(startingText) * 82.78;
+				feedback += num1 + " rupees, ";
+            }
+				
+			if( $('#yen').is(':checked') ){
+                num2 = parseFloat(startingText) * 134.22;
+				feedback += num2 + " yen, ";
+                
+            }
+
+			if( $('#Francs').is(':checked') ){
+                num3 = parseFloat(startingText) * 0.92;
+				feedback += num3 + " Francs";
+                
+            }
+			
+			if( feedback == startingText) // if no options were chosen
+				feedback = "Please choose a option";
+			else
+				feedback = "$" + feedback + " is your total";
+
+       		$("#msgHere").html( feedback );
+
+
+       });
+    });
+</script>
+
+</head>
+
+<body>
+    
+<h3>Type the starting amount (in US dollars) here:</h3>
+<input type="text" id="myText">
+    
+<h2>Check boxes</h2> 
+<form>
+<h3>What would you like to convert to (check off all that you want to see the conversion to)?</h3>
+<p>
+<input id="dollars"  type="checkbox" checked="checked">Dollars<br/>
+<input id="rupees" type="checkbox"> Rupees <br/>
+<input id="yen" type="checkbox" checked> Yen <br/>
+<input id="Francs" type="checkbox"> Francs<br/>
+<input type="button" id="getFeedback" value="Click here to see the conversions">
+</p>
+</form>
+
+<p id="msgHere">Some Fascinating Text! That I will change!  With jQuery!</p>
+
+</body>
+</html>

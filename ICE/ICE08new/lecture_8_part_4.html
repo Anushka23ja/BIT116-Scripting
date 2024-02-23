@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Anushka Chougule">
+<title>Hello World</title>
+<script>
+function myfunction() {
+    var answer = "";
+	var currentage = document.getElementById('age').value;
+	
+	switch(true){
+           case currentage>=90 && currentage <= 100: 
+            answer = "Grade: A";
+            break;
+           case currentage >= 80 && currentage <= 89: 
+            answer = "Grade: B";
+            break;
+           case currentage >= 70 && currentage <= 79: 
+            answer = "Grade: C";
+            break;
+           case currentage >= 60 && currentage <= 69:
+            answer = "Grade: D";
+            break;
+           case currentage >= 50 && currentage <= 59: 
+            answer = "Grade: F";
+            break;
+           default: 
+            answer = "Error! Please enter a number higher than 0 but lower than 100. ";
+            break;
+           
+           }
+    	document.getElementById('myfunction1').innerHTML = answer;
+
+        }
+</script>
+</head>
+
+<body>
+<p>Enter Your Grade (0-100 percent): <input type="text" id="age" ></p>
+<button onclick= "myfunction()"> Submit </button>
+    <h2 id = "myfunction1"></h2>
+</body>
+</html>

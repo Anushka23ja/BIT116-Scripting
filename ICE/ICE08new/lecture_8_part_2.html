@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Anushka Chougule">
+<title>Hello World</title>
+<script>
+function myfunction(age) {
+    var answer = "";
+	var currentage = document.getElementById('age').value;
+	
+	if (currentage> 18)
+  	{
+  		answer = "You are greater than 18 years old!";
+  	}
+	else if (currentage < 18)
+  	{
+  		answer = "You are  less than than 18 years old!";
+  	}
+    else if(isNaN(currentage)){
+        alert("PLEASE ENTER A NUMBER");
+        age = undefined; 
+        return;
+
+    }
+	else
+  	{
+  		answer = "You are exactly 18 years old!";
+  	}
+	document.getElementById('myfunction1').innerHTML = answer;
+    
+        }
+</script>
+</head>
+
+<body>
+<p>Your Age: <input type="text" name="agename" id="age" size="20"></p>
+<button onclick= "myfunction()"> Submit </button>
+    <h2 id = "myfunction1"></h2>
+</body>
+</html>

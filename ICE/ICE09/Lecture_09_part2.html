@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Anushka Chougule">
+<title>For Statement</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+function myFunction()
+{
+    var myFamily = new Array(5);
+    myFamily[0] = "mom";
+    myFamily[1] = "dad";
+    myFamily[2] = "anushka";
+    myFamily[3] = "adiraj";
+    myFamily[4] = "raj";
+
+    var one = "";
+
+	for (var i = 0; i < myFamily.length ; i++){
+           one += myFamily[i] + "<br>"; // Same as forTheWin = forTheWin + "The number is " + i + "<br>";
+  	}
+	document.getElementById("myFamily").innerHTML = one;
+}
+</script>
+</head>
+
+<body>
+
+<h2>For Loop Example</h2>
+
+<button onclick="myFunction()">Check It!</button>
+
+<p id="myFamily"></p>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* used for part 2*/
+body {
+  background-color: cornsilk;
+}
+/* used for part 2*/
+h2 {
+  color: navy;
+    margin-left:50px
+}
+
+/* used for part 3*/
+ .p2{
+     /* used for part 4*/
+    font-family: "Times New Roman", Times, serif;
+    /* used for part 5*/
+     font-style: italic; 
+    /* used for part 5*/
+     font-weight: bold;
+    /* used for part 6*/
+     text-decoration: underline;
+    }

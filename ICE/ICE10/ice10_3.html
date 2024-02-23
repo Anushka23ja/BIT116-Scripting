@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lecture 10 Ice 3</title>
+<script src="ice10_3.js"></script>
+</head>
+<body>
+<script>
+function getPhone() {
+		var checkPhone = document.getElementById("phone").value;
+        var toMatch =  /^\d{3}-\d{3}-\d{4}$/;
+		if(toMatch.test(checkPhone)) {
+		window.alert("Thank you! We have saved your phone number");
+	   }
+	   else 
+	   {
+		window.alert("Please enter a vaild phone number (XXX-XXX-XXXX)");
+	   }
+		
+	}    
+</script>
+Phone Number (XXX-XXX-XXXX)<input type="text" id="phone"><br><br>
+
+<button onclick="getPhone()">Submit</button>
+
+</body>
+</html>

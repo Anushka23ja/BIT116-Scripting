@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Anushka Chougule">
+<title>Function 10</title>
+<script>
+function reallyGroovy(first, last) {
+    var first = document.getElementById('first').value;
+    var last = document.getElementById('last').value;
+    document.getElementById('reallyGroovy').innerHTML = first + " " + last + " is a very groovy person! ";
+}
+</script>
+</head>
+
+<body>
+<p>First Name: <input type="text" name="firstname" id="first" size="20"></p>
+<p>Last Name: <input type="text" name="lastname" id="last" size="20"></p>
+<button onclick= "reallyGroovy()"> Submit </button>
+    <h2 id = "reallyGroovy"></h2>
+</body>
+</html>

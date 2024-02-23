@@ -1,0 +1,86 @@
+<!-- LECTURE 9 PART 2 ICE: Age Calculator
+########################################################################## -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Anushka Chougule">
+<title>Lecture 9 Part 2</title>
+<style>
+.red {color:#900;}
+.blue {color:#039;}
+</style>
+<script>
+function todaysDate() {
+	
+	// (1) Declare a variable 'currentDate' that will by assigned data from the Date() object.	
+	// HINT: Don't forget the 'new' keyword preceding Date()
+     var currentDate = new Date()
+	
+	var weekDay = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+	// (2) Declare a variable 'monthName' that will hold an Array of month names: 
+	// January, February, March, April, May, June, July, August, September, October, November, December
+    var monthName= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	
+	calendarDay = weekDay[currentDate.getDay()]; // This pulls current day of week from weekDay array using getDay() method
+	calendarDate = currentDate.getDate(); // This pulls current date using getDate() method
+	calendarMonth = monthName[currentDate.getMonth()]; // This pulls current month of year from monthName array using getMonth() method
+	calendarYear = currentDate.getFullYear(); // This pulls current year using getFullyear() method
+	
+	var today = "Today is " + calendarDay + ",  " + calendarMonth + " " + calendarDate + ",  " + calendarYear;	
+	
+	document.getElementById("today").innerHTML = today; // This pushes the today string to the <h3> tag in the body
+}
+
+function calculateAge(){
+	
+    
+    var bMonth = document.getElementById("birthMonth").value;
+    var bDay = document.getElementById("birthDay").value;
+	var bYear = document.getElementById("birthYear").value;
+    var todayDate = new Date();
+    var todayYear = todayDate.getFullYear();
+    var todayMonth = todayDate.getMonth();
+    var todayDay = todayDate.getDate();
+    var age = todayYear - bYear ; 
+    
+	if (todayMonth < (bMonth - 1)) // This reconfigures age based on where birth month falls in current calendar
+	{
+		age = age - 1; // or age--
+	}
+	
+	if ((bMonth - 1) == todayMonth && (todayDay < bDay)) // This reconfigures age based on where birth month falls in current calendar
+	{
+		age = age - 1; // or age--
+	}
+	
+	// (11) Pointing to the <h2> element id'd as "displayAge" below, display the following message: "You are " + age + " years young!";
+		// HINT: getElementById...innerHTML
+    
+    document.getElementById('displayAge').innerHTML = "You are " + age + " years young!";
+}
+</script>
+</head>
+<body onLoad=todaysDate()>
+
+<h2> Handy-Dandy Age Calculator</h2>
+
+<hr align="left" width="30%">
+
+<h3 id="today" class="blue"></h3>
+
+<hr align="left" width="30%">
+
+<p>Enter Your Birth Month in Numbers [example: 6]: <input type="text" id="birthMonth" size="2"></p>
+<p>Enter Your Birth Day in Numbers [example: 20]: <input type="text" id="birthDay" size="2"></p>
+<p>Enter Your Birth Year in Numbers [example: 1988]: <input type="text" id="birthYear" size="4"></p>
+
+<hr align="left" width="30%">
+
+<button onClick="calculateAge()">Calculate Age</button>
+
+<h2 id="displayAge" class="red"></h2>
+
+</body>
+</html>
+
